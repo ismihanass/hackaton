@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#000c74">
+  <meta name="description" content="AllSeason.ba — otkrij Bosnu i Hercegovinu u svakom godišnjem dobu. Planiraj putovanje uz vremensku prognozu i pametne preporuke, bez registracije.">
+  <title>AllSeason.ba — Otkrij Bosnu u svakoj sezoni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script defer src="motion.js"></script>
+  <script defer src="data.js"></script><script defer src="stays.js"></script><script defer src="logic.js"></script><script defer src="weather.js"></script><script defer src="climate.js"></script><script defer src="events.js"></script><script defer src="weather-scene.js"></script><script defer src="app.js"></script>
+
+ <script>
+    window.__lc = window.__lc || {};
+    window.__lc.organizationId = "7990d0a3-1b97-4fdf-bb8c-2424c257b536";
+    window.__lc.integration_name = "manual_onboarding";
+    window.__lc.product_name = "text";
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+ </script>
+</head>
+<body data-season="autumn">
+ <div class="announcement"><span class="announcement-dot"></span><span data-i18n="announce">Bosna i Hercegovina. Svaka sezona ima svoju priču.</span><span class="announcement-flower">✦</span></div>
+ <header class="header" id="site-header">
+  <a class="brand" href="#home" data-nav="home" aria-label="AllSeason.ba početna"><span class="brand-mark"><svg width="27" height="27" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M2 20 10 6l6 11 4-6 6 9H2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 14.5 11 18l3-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span>AllSeason<span class="brand-light">.ba</span></span></a>
+  <nav id="main-nav" class="main-nav" aria-label="Glavna navigacija"><button class="nav-link active" data-view="home" data-i18n="navHome">Početna</button><button class="nav-link" data-view="explore" data-i18n="navDestinations">Destinacije</button><button class="nav-link" data-view="stays" data-i18n="navStays">Smještaj</button><button class="nav-link" data-view="planner" data-i18n="navPlanner">Moj planer</button><button class="nav-link" data-view="events">Događaji</button><button class="nav-link" data-view="map" data-i18n="navMap">Mapa</button><button class="nav-link" data-view="guide" data-i18n="navGuide">Praktični vodič</button></nav>
+  <div class="header-actions"><button class="lang-toggle" id="lang-toggle" aria-label="Promijeni jezik">EN <span aria-hidden="true">⌄</span></button><button class="header-plan" data-view="planner"><span data-i18n="myTrip">Moje putovanje</span><span class="plan-count" id="plan-count">0</span></button><button class="mobile-menu" id="mobile-menu" aria-label="Otvori meni" aria-expanded="false"><span></span><span></span><span></span></button></div>
+ </header>
+ <main id="app" tabindex="-1"></main>
+ <footer class="footer"><div class="footer-inner"><div><a class="brand footer-brand" href="#home" data-nav="home"><span class="brand-mark">✦</span><span>AllSeason<span class="brand-light">.ba</span></span></a><p data-i18n="footerText">Ljepote Bosne i Hercegovine, 365 dana u godini.</p></div><div class="footer-links"><a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a><a href="https://www.fhmzbih.gov.ba/" target="_blank" rel="noopener">FHMZ BiH</a><button data-view="guide" data-i18n="aboutData">Izvori i informacije</button></div></div><div class="footer-bottom"><span>© 2026 AllSeason.ba · Competition prototype</span><span data-i18n="footerNoAccount">Bez registracije. Bez instalacije. Samo otkrij.</span></div></footer>
+ <div class="scroll-progress" id="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
+ <div id="modal-root"></div><div id="toast" class="toast" role="status" aria-live="polite"></div>
+ <noscript><a href="https://www.text.com/chat-with-ai-agent/7990d0a3-1b97-4fdf-bb8c-2424c257b536/" rel="nofollow">Chat with AI Agent</a>, powered by <a href="https://www.text.com/" rel="noopener nofollow" target="_blank">Text</a></noscript>
+ <svg class="svg-sprites" xmlns="http://www.w3.org/2000/svg"><symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol><symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></symbol><symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol><symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></symbol><symbol id="icon-cloud" viewBox="0 0 24 24"><path d="M7 18h11a4 4 0 0 0 .1-8A6 6 0 0 0 6.5 9 4.6 4.6 0 0 0 7 18Z"/></symbol><symbol id="icon-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol><symbol id="icon-shuffle" viewBox="0 0 24 24"><path d="M4 6h3c4 0 6 12 10 12h3m-4-4 4 4-4 4M4 18h3c2 0 3-2 4-4m3-4c1-2 2-4 4-4h2m-4-4 4 4-4 4"/></symbol></svg>
+</body>
+</html>
